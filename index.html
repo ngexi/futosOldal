@@ -304,7 +304,27 @@
 				});
 			  }
 
-			
+			//here starts
+				// Create a new Date object
+				var now = new Date();
+
+				// Get the current year, month, day, hour, and minute
+				var year = now.getFullYear();
+				var month = now.getMonth() + 1;
+				var day = now.getDate();
+				var hour = now.getHours();
+				var minute = now.getMinutes();
+
+				// Add leading zeros to month, day, hour, and minute if needed
+				month = month < 10 ? "0" + month : month;
+				day = day < 10 ? "0" + day : day;
+				hour = hour < 10 ? "0" + hour : hour;
+				minute = minute < 10 ? "0" + minute : minute;
+
+				// Concatenate the year, month, day, hour, and minute in the format yymmdd/hhmm
+				var timeStamp = year.toString().substr(-2) + month + day + "/" + hour + minute;
+			//here ends
+			  
 			  // Handle form submission
 			  const handleSubmit = (event) => {
 				event.preventDefault();
@@ -312,7 +332,7 @@
 				const email = document.getElementById('email').value;
 				const category = document.getElementById('category').value;
 				const message = document.getElementById('message').value;
-				pushData(name, email, category, message);
+				pushData(name, email, category, message, timeStamp);
 				alert('Az érdeklődésedet megkaptuk, hamarosan jelentkezünk!');
 				event.target.reset();
 			  };
