@@ -44,20 +44,20 @@
 
 		// Title Bar.
 			$(
-				'<div id="titleBar">' +
+				'<!--div id="titleBar">' +
 					'<a href="#navPanel" class="toggle"></a>' +
 					'<span class="title">' + $('#logo').html() + '</span>' +
-				'</div>'
+				'</div-->'
 			)
 				.appendTo($body);
 
 		// Panel.
 			$(
-				'<div id="navPanel">' +
+				'<!--div id="navPanel">' +
 					'<nav>' +
 						$('#nav').navList() +
 					'</nav>' +
-				'</div>'
+				'</div-->'
 			)
 				.appendTo($body)
 				.panel({
